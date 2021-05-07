@@ -13,7 +13,7 @@ module.exports = (app) => {
     data ["id"] = Math.floor(Math.random()*1000000)
     if (notesData.length < 8) {
       notesData.push(data);
-      fs.writeFile("./db/db.json", JSON.stringify(data), err => {
+      fs.writeFile("./db/db.json", JSON.stringify(notesData), err => {
         if (err) throw err;
         res.json(true);
       })
